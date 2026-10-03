@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriel Lopez | Accounting Portfolio</title>
+<meta name="description" content="Portfolio of Gabriel Lopez, accounting major focused on helping small businesses grow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f7f2;
+    --ink: #1b2a41;
+    --muted: #4d5b6e;
+    --rule: #c9d6c6;
+    --accent: #0f6b5c;
+    --accent-dark: #0a4d42;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-dark); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site {
+    border-bottom: 2px solid var(--ink);
+  }
+  header.site .wrap {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: .5rem 1.5rem; padding-top: 1rem; padding-bottom: 1rem;
+  }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; }
+  nav a { margin-left: 1.25rem; color: var(--ink); text-decoration: none; font-weight: 600; }
+  nav a:first-child { margin-left: 0; }
+  nav a:hover { color: var(--accent); text-decoration: underline; }
+
+  /* Hero: the statement written on ruled ledger lines */
+  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(2.6rem, 7vw, 4.25rem);
+    line-height: 1.05; margin: 0 0 1.75rem; letter-spacing: -0.01em;
+  }
+  .statement {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    line-height: 2.1rem;
+    max-width: 32em;
+    margin: 0;
+    padding: .1rem 0;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(2.1rem - 1px), var(--rule) calc(2.1rem - 1px), var(--rule) 2.1rem);
+    border-top: 1px solid var(--rule);
+  }
+
+  section { padding: 3rem 0; border-top: 2px solid var(--ink); }
+  section h2 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 1.75rem; margin: 0 0 1.5rem;
+  }
+
+  /* Skills as a two-column ledger */
+  .ledger { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .ledger h3 {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
+    margin: 0; padding-bottom: .5rem; border-bottom: 2px solid var(--accent);
+  }
+  .ledger ul { list-style: none; margin: 0; padding: 0; }
+  .ledger li { padding: .6rem 0; border-bottom: 1px solid var(--rule); }
+
+  /* Projects as ledger entries */
+  .entry { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+  .entry:first-of-type { padding-top: 0; }
+  .entry:last-of-type { border-bottom: 0; padding-bottom: 0; }
+  .entry h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; margin: 0 0 .25rem; }
+  .meta { color: var(--muted); margin: 0 0 .9rem; font-size: .975rem; }
+  .entry p { margin: 0 0 .9rem; max-width: 40em; }
+  .entry ul { margin: 0 0 1rem; padding-left: 1.2rem; max-width: 40em; }
+  .entry li { margin-bottom: .35rem; }
+  .btn {
+    display: inline-block; padding: .55rem 1.1rem;
+    background: var(--accent); color: #fff; font-weight: 600;
+    text-decoration: none; border-radius: 4px;
+  }
+  .btn:hover { background: var(--accent-dark); color: #fff; }
+
+  footer { border-top: 2px solid var(--ink); padding: 1.75rem 0 2.5rem; color: var(--muted); }
+  footer p { margin: 0; }
+
+  @media (max-width: 640px) {
+    .ledger { grid-template-columns: 1fr; gap: 2rem; }
+    .hero { padding-top: 3rem; }
+    nav a { margin-left: 1rem; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0f1a17; --ink: #e8efe9; --muted: #a9b8b0;
+      --rule: #2b3d37; --accent: #5fc9b4; --accent-dark: #8fe0cf;
+    }
+    .btn { color: #0f1a17; }
+    .btn:hover { color: #0f1a17; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <span class="brand">Gabriel Lopez</span>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero" id="about">
+      <h1>Gabriel Lopez</h1>
+      <p class="statement">I'm an accounting major who helps small businesses turn their financial data into clear decisions that drive growth.</p>
+    </div>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="ledger">
+        <div>
+          <h3>Technical</h3>
+          <ul>
+            <li>Microsoft Excel</li>
+            <li>POS Systems</li>
+            <li>Cash Reconciliation</li>
+            <li>Budgeting</li>
+            <li>Cash Flow Forecasting</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Professional</h3>
+          <ul>
+            <li>Attention to Detail</li>
+            <li>Clear Communication</li>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+
+      <article class="entry">
+        <h3>Home Depot Debt and Credit Risk Analysis</h3>
+        <p class="meta">Intermediate Accounting 2 &middot; Group project (4 members) &middot; Presented the credit rating and ratio analysis</p>
+        <p>Analyzed Home Depot's financing liabilities using its FY2025 annual report and SEC filings, then judged whether its credit rating matches its financial health.</p>
+        <ul>
+          <li>Compared short-term and long-term debt year over year: total debt rose 4.5% to $55.8 billion, with more of it coming due within a year.</li>
+          <li>Calculated FFO / Total Debt (31.7%) and Debt / EBITDA (2.24x).</li>
+          <li>Concluded the ratios support the company's S&amp;P "A" investment-grade rating.</li>
+        </ul>
+        <a class="btn" href="home-depot-analysis.pdf">View the presentation (PDF)</a>
+      </article>
+
+      <article class="entry">
+        <h3>Carpooling System Proposal for Rutgers University</h3>
+        <p class="meta">Business and Professional Writing &middot; Individual project</p>
+        <p>Wrote a funding and design proposal for a Rutgers-only carpooling service, built to ease campus parking shortages and traffic for students who commute or live off campus.</p>
+        <ul>
+          <li>Showed that a low-budget software solution costs less than building more parking.</li>
+          <li>Identified stakeholders and proposed funding from the university, sponsors, and alumni.</li>
+          <li>Addressed the safety and cost concerns students raise about carpooling with a myRutgers portal widget, schedule matching, and ride feedback.</li>
+        </ul>
+        <a class="btn" href="carpooling-proposal.pdf">Read the proposal (PDF)</a>
+      </article>
+
+      <article class="entry">
+        <h3>Policy Memo: Federal Funding for Electric School Buses</h3>
+        <p class="meta">Policy memo &middot; Individual project &middot; April 2026</p>
+        <p>Wrote an executive memo advising the President on whether to fund a phased switch from diesel to electric school buses, with priority for high-need districts.</p>
+        <ul>
+          <li>Weighed upfront costs ($300,000 to $400,000 per bus, plus charging equipment) against health, attendance, and test-score benefits.</li>
+          <li>Compared three options: keep the current program, fund every district equally, or fund in targeted phases.</li>
+          <li>Recommended a three-phase, six-year rollout starting with $2 billion for the 500 highest-need districts, and included a SWOT analysis.</li>
+        </ul>
+        <a class="btn" href="policy-memo.pdf">Read the memo (PDF)</a>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Gabriel Lopez &middot; <a href="https://github.com/Glopez9-9">GitHub profile</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
